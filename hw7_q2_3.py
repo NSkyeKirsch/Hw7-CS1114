@@ -30,12 +30,25 @@ def is_haiku(original_string):
     else:
         message = "WARNING: This does not have 3 lines."
 
-    return message + "\n" + str(real_haiku) if real_haiku == False else str(real_haiku)
+    return real_haiku if not real_haiku else str(real_haiku)
+
+def haiku_string_parser(input_string):
+    if is_haiku(input_string) == "True":
+        each_line_list = input_string.split("/")
+        if len(each_line_list) == 3:
+            line_one = each_line_list[0].split(",")
+            line_two = each_line_list[1].split(",")
+            line_three = each_line_list[2].split(",")
+            final_one = "".join(tuple(line_one))
+            final_two = "".join(tuple(line_two))
+            final_three = "".join(tuple(line_three))
+        return("{} \n{} \n{}".format(final_one,final_two,final_three))
+    return ""
 
 
 def main():
 
     sample_input_string = "clouds ,mur,mur ,dark,ly /it ,is ,a ,blin,ding ,ha,bit /ga,zing ,at ,the ,moon "
-    print(is_haiku(sample_input_string))
+    print(haiku_string_parser(sample_input_string))
 
 main()
