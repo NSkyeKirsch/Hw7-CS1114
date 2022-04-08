@@ -20,12 +20,8 @@ def get_matryoshka_list(in_list):
             temp_list.append(in_list[i])
         else:
             if in_list[i] > in_list[(i-1)]:
-                print("adding to temp list at i=", i)
-                print(in_list[i])
                 temp_list.append(in_list[i])
             else:
-                print("ready to append at i=", i)
-                print(in_list[i])
                 final_list.append(temp_list)
                 final_list = copy.deepcopy(final_list)
                 temp_list.clear()
