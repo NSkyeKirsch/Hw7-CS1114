@@ -16,14 +16,14 @@ def is_impostor(information, corrupter_function):
 
     information.insert(0, ['a', 'b', 'c'])
 
-    corrupted_str = corrupter_function(information)
+    corrupted_list_of_stuff = corrupter_function(information)
 
     information[0][1] = 2
 
     print(information)
-    print(corrupted_str)
+    print(corrupted_list_of_stuff)
 
-    if information[0][1] != corrupted_str[0][1]:
+    if information[0][1] != corrupted_list_of_stuff[0][1]:
         return True
     else:
         return False
