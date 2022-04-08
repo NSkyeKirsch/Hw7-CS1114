@@ -20,9 +20,6 @@ def is_impostor(information, corrupter_function):
 
     information[0][1] = 2
 
-    print(information)
-    print(corrupted_list_of_stuff)
-
     if information[0][1] != corrupted_list_of_stuff[0][1]:
         return True
     else:
